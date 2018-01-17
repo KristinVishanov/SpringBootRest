@@ -35,6 +35,7 @@ public class UserController {
         User user = new User();
         user.setName(addUserRequest.getName());
         user.setSurname(addUserRequest.getSurname());
+        user.setEmail(addUserRequest.getEmail());
         userService.createUser(user);
     }
 }

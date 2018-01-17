@@ -20,6 +20,8 @@ public class User implements Serializable{
     @Column(name = "sur_name")
     private String surname;
 
+    private String email;
+
     public long getId() {
         return id;
     }
@@ -42,5 +44,13 @@ public class User implements Serializable{
 
     public void setSurname(String surname) {
         this.surname = surname;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
 }
