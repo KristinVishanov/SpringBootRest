@@ -14,13 +14,17 @@ public class User implements Serializable{
     @Column(name = "id", columnDefinition = "BIGINT UNSIGNED")
     private long id;
 
-    @Column(name = "name")
-    private String name;
+    @Column(name = "first_name", nullable = false)
+    private String firstName;
 
-    @Column(name = "sur_name")
-    private String surname;
+    @Column(name = "last_name", nullable = false)
+    private String lastName;
 
+    @Column(name = "email", nullable = false)
     private String email;
+
+    @Column(name = "status", columnDefinition = "CHARACTER", nullable = false)
+    private char status;
 
     public long getId() {
         return id;
@@ -30,20 +34,20 @@ public class User implements Serializable{
         this.id = id;
     }
 
-    public String getName() {
-        return name;
+    public String getFirstName() {
+        return firstName;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
     }
 
-    public String getSurname() {
-        return surname;
+    public String getLastName() {
+        return lastName;
     }
 
-    public void setSurname(String surname) {
-        this.surname = surname;
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
     }
 
     public String getEmail() {
@@ -52,5 +56,13 @@ public class User implements Serializable{
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public char getStatus() {
+        return status;
+    }
+
+    public void setStatus(char status) {
+        this.status = status;
     }
 }

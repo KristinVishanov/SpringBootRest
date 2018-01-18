@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 @RestController
+@RequestMapping("/users")
 public class UserController {
 
     private UserDao userRepository;
@@ -33,9 +34,10 @@ public class UserController {
     @RequestMapping(method = RequestMethod.POST)
     public void addUser(@RequestBody AddUserRequest addUserRequest){
         User user = new User();
-        user.setName(addUserRequest.getName());
-        user.setSurname(addUserRequest.getSurname());
+        user.setFirstName(addUserRequest.getFirstName());
+        user.setLastName(addUserRequest.getLastName());
         user.setEmail(addUserRequest.getEmail());
+        user.setStatus('1');
         userService.createUser(user);
     }
 }
