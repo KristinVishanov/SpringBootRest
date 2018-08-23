@@ -1,9 +1,10 @@
 package com.spring.boot.rest.example.demo.entity.request;
 
-public class AddUserRequest {
+public class UserDto {
     private String firstName;
     private String lastName;
     private String email;
+    private char status;
 
     public String getFirstName() {
         return firstName;
@@ -27,5 +28,13 @@ public class AddUserRequest {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public char getStatus() {
+        return status;
+    }
+
+    public void setStatus(char status) {
+        this.status = status;
     }
 }

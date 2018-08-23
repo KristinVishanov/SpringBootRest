@@ -1,16 +1,11 @@
 package com.spring.boot.rest.example.demo.controller;
 
-import com.google.gson.Gson;
 import com.spring.boot.rest.example.demo.entity.User;
-import com.spring.boot.rest.example.demo.entity.request.AddUserRequest;
-import com.spring.boot.rest.example.demo.repository.UserDao;
+import com.spring.boot.rest.example.demo.entity.request.UserDto;
 import com.spring.boot.rest.example.demo.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import javax.ws.rs.core.MediaType;
-import javax.ws.rs.core.Response;
-import java.util.ArrayList;
 import java.util.List;
 
 @RestController
@@ -41,12 +36,12 @@ public class UserController {
     }
 
     @RequestMapping(method = RequestMethod.POST)
-    public User addUser(@RequestBody AddUserRequest addUserRequest){
+    public User addUser(@RequestBody UserDto userDto){
         User user = new User();
-        user.setFirstName(addUserRequest.getFirstName());
-        user.setLastName(addUserRequest.getLastName());
-        user.setEmail(addUserRequest.getEmail());
-        user.setStatus('1');
+        user.setFirstName(userDto.getFirstName());
+        user.setLastName(userDto.getLastName());
+        user.setEmail(userDto.getEmail());
+        user.setStatus(userDto.getStatus());
         userService.createUser(user);
 
         return user;
