@@ -1,7 +1,6 @@
 package com.spring.boot.rest.example.demo;
 
 import com.google.gson.Gson;
-import com.spring.boot.rest.example.demo.aplication.Coin;
 import org.apache.http.HttpResponse;
 import org.apache.http.client.HttpClient;
 import org.apache.http.client.methods.HttpGet;

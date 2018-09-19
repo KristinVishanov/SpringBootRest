@@ -2,7 +2,7 @@ package com.spring.boot.rest.example.demo.aplication;
 
 import java.math.BigDecimal;
 
-public class CoinLoc {
+public class CoinPrice {
     private BigDecimal price;
     private BigDecimal volume_24h;
     private BigDecimal market_cap;
